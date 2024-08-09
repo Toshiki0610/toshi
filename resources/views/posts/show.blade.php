@@ -16,7 +16,8 @@
         </h1>
         <div class='content'>
             <div class='content_post'>
-               <3>本文</3>
+               <h3>本文</h3>
+
                 <p class='body'>{{ $post->body }}</p>
             </div>
         </div>
