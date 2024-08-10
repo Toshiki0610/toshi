@@ -8,13 +8,14 @@
     
     class PostController extends Controller
     {
-        public function index(Post $post)//インポートしたPostをインスタンス化して$postとして使用。
+        public function index(Post $post)
         {
-            return view('posts.Index')->with(['posts' => $post->getPaginateBylimit(1)]);
+            return view('posts.Index')->with(['posts' => $post->getPaginateBylimit(5)]);
         }
         public function show(Post $post)
         {
             return view('posts.show')->with(['post' => $post]);
+            
         }
         public function create()
         {
@@ -34,8 +35,13 @@
         {
             $input_post = $request['post'];
             $post->fill($input_post)->save();
-    
+            
              return redirect('/posts/' . $post->id );
         }
+         public function delete(Post $post)
+        {
+            $post->delete();
+            return redirect('/');
+        }
+    } 
     
-}
