@@ -7,7 +7,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        
+
     </head>
     <body class="antialiased">
         <h1 class="title">
@@ -21,6 +21,10 @@
         </div>
         <div class="edit">
             <a href="/posts/{{ $post->id }}/edit">edit</a>
+        </div>
+
+                <p class='body'>{{ $post->body }}</p>
+            </div>
         </div>
         <div class="footer">
             <a href="/">戻る</a>
